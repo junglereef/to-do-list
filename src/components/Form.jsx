@@ -1,14 +1,18 @@
 import React from 'react';
 
-export default function Form() {
+export default function Form({ setInputText }) {
   const inputTextHandler = (e) => {
     // eslint-disable-next-line
     console.log(e.target.value);
+    setInputText(e.target.value);
   };
+  const submitTodoHandler = (e) => {
+    e.preventDefault();
+  }
   return (
     <form>
       <input onChange={inputTextHandler} type="text" className="todo-input" />
-      <button className="todo-button" type="submit">
+      <button onClick={submitTodoHandler}  className="todo-button" type="submit">
         <i className="fas fa-plus-square" />
       </button>
       <div className="select">
