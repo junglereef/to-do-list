@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default function Form({ setInputText, todos, setTodos, inputText }) {
+// eslint-disable-next-line react/prop-types
+export default function Form({ setInputText, todos, setTodos, inputText,
+}) {
   const inputTextHandler = (e) => {
     // eslint-disable-next-line
     console.log(e.target.value);
@@ -9,14 +11,15 @@ export default function Form({ setInputText, todos, setTodos, inputText }) {
   const submitTodoHandler = (e) => {
     e.preventDefault();
     setTodos([
-      ...todos, {text: inputText, completed: false, id: Math.random() + 1000 }
+      ...todos, { text: inputText, completed: false, id: Math.random() + 1000 },
     ]);
-    setInputText("");
+    setInputText('');
   };
+
   return (
     <form>
       <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
-      <button onClick={submitTodoHandler}  className="todo-button" type="submit">
+      <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square" />
       </button>
       <div className="select">
@@ -29,4 +32,3 @@ export default function Form({ setInputText, todos, setTodos, inputText }) {
     </form>
   );
 }
-
