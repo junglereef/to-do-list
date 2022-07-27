@@ -1,7 +1,7 @@
 import React from 'react';
 
 // eslint-disable-next-line react/prop-types
-export default function Form({ setInputText, todos, setTodos, inputText,
+export default function Form({ setInputText, todos, setTodos, inputText
 }) {
   const inputTextHandler = (e) => {
     // eslint-disable-next-line
